@@ -38,6 +38,7 @@ class _LocationScreenState extends State<LocationScreen> {
       weatherIcon = weather.getWeatherIcon(condition);
       cityName = weatherData['name'];
       weatherMessage = weather.getMessage(9);
+      print(weatherData);
     });
   }
 
@@ -63,6 +64,7 @@ class _LocationScreenState extends State<LocationScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   TextButton(
+                    style: TextButton.styleFrom(primary: Colors.white),
                     onPressed: () async {
                       var weatherData = await weather.getLocationWeather();
                       updateUI(weatherData);
@@ -73,6 +75,7 @@ class _LocationScreenState extends State<LocationScreen> {
                     ),
                   ),
                   TextButton(
+                    style: TextButton.styleFrom(primary: Colors.white),
                     onPressed: () async {
                       var typedName = await Navigator.push(
                         context,
